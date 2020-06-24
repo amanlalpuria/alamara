@@ -18,6 +18,7 @@ args = vars(ap.parse_args())
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
+
 # loop over the image paths
 for imagePath in paths.list_images(args["images"]):
 	# load the image and resize it to (1) reduce detection time
