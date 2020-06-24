@@ -26,7 +26,7 @@ image_YCrCb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
 skinRegionYCrCb = cv2.inRange(image_YCrCb,min_YCrCb,max_YCrCb)
 skinYCrCb = cv2.bitwise_and(image, image, mask = skinRegionYCrCb)
 
-cv2.imwrite("/assets/img/skin-detection/ycrcb.png", np.hstack([image,skinYCrCb]))
+cv2.imwrite("../img/ycrcb.png", np.hstack([image,skinYCrCb]))
 
 # Convert HSV color space  - for hairs
 image_HSV = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)

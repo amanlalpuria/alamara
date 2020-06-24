@@ -6,7 +6,7 @@
 
         python .\try.py --image ..\img\test_4.jpg
 
-    ![Skin Detection](output\skin_detection.png)
+    ![Skin Detection](img\ycrcb.png)
 
 ## After human contour done, need to calculate size of the body
 
