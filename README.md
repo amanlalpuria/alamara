@@ -15,7 +15,13 @@
     
     ![Body Detection](output/watershed.png)
 
+3. Vide Body Detection
 
+         python .\body_detection\live_detection.py
+        
+    ![Body Detection](output/video_output.gif)
+    
+    
 ## After human contour done, need to calculate size of the body
 
 1. Tried to implement object_size calculation. To test go to body_size directory
