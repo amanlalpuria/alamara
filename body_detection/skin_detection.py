@@ -31,9 +31,18 @@ cv2.imwrite("../img/ycrcb.png", np.hstack([image,skinYCrCb]))
 # Convert HSV color space  - for hairs
 image_HSV = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
+
+# Contour marking
+# find the contours from the thresholded image
+_, binary = cv2.threshold(gray, 225, 255, cv2.THRESH_BINARY_INV)
+contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+# draw all contours
+image = cv2.drawContours(image, contours, -1, (0, 255, 0), 2)
+
 # show the output image
 # cv2.imshow("Image image_YCrCb", image_YCrCb)
 cv2.imshow("Image skinRegionYCrCb", skinRegionYCrCb)
+cv2.imshow("Image skinRegionYCrCb Contour", image)
 cv2.imshow("Image skinYCrCb", skinYCrCb)
 
 
