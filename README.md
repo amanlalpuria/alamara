@@ -8,6 +8,14 @@
 
     ![Skin Detection](output/skin_detection.png)
 
+
+2. Body Detection
+
+        python .\body_detection\watershed_algorithm.py --image .\img\test_1.JPG
+    
+    ![Body Detection](output/watershed.png)
+
+
 ## After human contour done, need to calculate size of the body
 
 1. Tried to implement object_size calculation. To test go to body_size directory

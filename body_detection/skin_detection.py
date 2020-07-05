@@ -32,17 +32,9 @@ cv2.imwrite("../img/ycrcb.png", np.hstack([image,skinYCrCb]))
 image_HSV = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
 # show the output image
-cv2.imshow("Image image_YCrCb", image_YCrCb)
+# cv2.imshow("Image image_YCrCb", image_YCrCb)
 cv2.imshow("Image skinRegionYCrCb", skinRegionYCrCb)
 cv2.imshow("Image skinYCrCb", skinYCrCb)
-
-# cv2.imshow("Image", image_HSV)
-# cv2.imshow("Hue Channel", image_HSV[:,:,0])
-# cv2.imshow("Saturation Channel", image_HSV[:,:,1])
-# cv2.imshow("Value Channel", image_HSV[:,:,2])
-# cv2.imshow("Value Channel", image_HSV[:,:,2])
-
-
 
 
 cv2.waitKey(0)
