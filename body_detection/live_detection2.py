@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import imutils
+import skindetection as sd
 
 
 # Create a VideoCapture object and read from input file
@@ -24,11 +25,15 @@ while(cap.isOpened()):
 
     # Display the resulting frame
     
-    image = imutils.resize(frame, width=min(1200, frame.shape[1]))
+    image = imutils.resize(frame, width=min(800, frame.shape[1]))
     gray = cv2.cvtColor(image,cv2.cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    
-    cv2.imshow("test", thresh)
+
+    skinRegionYCrCb, image, skinYCrCb = sd.skin_detection(image)
+
+    cv2.imshow("test", skinRegionYCrCb)
+    # cv2.imshow("test", contour_image)
+
     # cv2.waitKey(0)
     # cv2.imshow('Frame',frame)
 
@@ -40,7 +45,6 @@ while(cap.isOpened()):
   else: 
     break
 
-cv2.inwrite("output.jpg", frame)
 # When everything done, release the video capture object
 cap.release()
 
